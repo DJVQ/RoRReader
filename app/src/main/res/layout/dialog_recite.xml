@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorForeground"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="5dp">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingTop="10dp"
+            android:text="@string/content_recite"
+            android:textColor="@color/textPrimary"
+            android:textSize="@dimen/text_medium_size" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/recite_t"
+                android:textColor="@color/textPrimary"
+                android:textSize="@dimen/text_normal_size" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/et_recite_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/recite_t"
+                android:maxLines="3"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:textSize="@dimen/text_small_size" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/recite_c"
+                android:textColor="@color/textPrimary"
+                android:textSize="@dimen/text_normal_size" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/need_recite_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/need_recite_c"
+                android:maxLines="10"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:textSize="@dimen/text_small_size" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/recite_n"
+                android:textColor="@color/textSecondary"
+                android:textSize="@dimen/text_normal_size" />
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/recite_num"
+                android:layout_width="115dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:clickable="false"
+                android:dropDownWidth="75dp"
+                android:gravity="center"
+                android:longClickable="false"
+                android:textColor="@color/textSecondary" />
+
+        </LinearLayout>
+
+
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/colorBackground" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_cancel"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:background="@drawable/selector_common_bg"
+            android:gravity="center"
+            android:text="@string/cancel"
+            android:textColor="@color/textPrimary"
+            android:textSize="16sp" />
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorBackground" />
+
+        <TextView
+            android:id="@+id/tv_confirm"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:background="@drawable/selector_common_bg"
+            android:gravity="center"
+            android:text="@string/confirm"
+            android:textColor="@color/textPrimary"
+            android:textSize="16sp" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

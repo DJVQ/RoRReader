@@ -1,0 +1,131 @@
+plugins {
+    id 'com.android.application'
+}
+
+apply plugin: 'org.greenrobot.greendao' // apply plugin
+apply plugin: 'kotlin-android'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+
+    defaultConfig {
+        applicationId "com.example.myreadproject8"
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    //greendao配置
+    greendao {
+        //数据库版本号，升级时修改
+        schemaVersion 13
+        //生成的DAO，DaoMaster和DaoSession的包路径。默认与表实体所在的包路径相同
+        daoPackage 'com.example.myreadproject8.greendao.gen'
+        //生成源文件的路径。默认源文件目录是在build目录中的(build/generated/source/greendao)
+        targetGenDir 'src/main/java'
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'com.google.android.material:material:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation files('libs\\sun.misc.BASE64Decoder.jar')
+    implementation 'androidx.documentfile:documentfile:1.0.1'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    implementation 'org.greenrobot:greendao:3.3.0' // add library
+    implementation 'org.greenrobot:greendao-generator:3.3.0'
+    implementation 'com.github.yuweiguocn:GreenDaoUpgradeHelper:v2.2.1'
+
+
+    //RxAndroid
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.19'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+
+    //ImmersionBar(沉浸式状态栏)
+    implementation 'com.gyf.immersionbar:immersionbar:3.0.0'
+
+    //SmartRefreshLayout
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.2'
+    implementation 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.2'
+
+    //编码识别
+    implementation 'com.github.albfernandez:juniversalchardet:2.4.0'
+
+    //Toasty
+    implementation 'com.github.GrenderG:Toasty:1.5.0'
+
+    //Gson
+    implementation 'com.google.code.gson:gson:2.8.5'
+
+    //okhttp
+    implementation 'com.squareup.okhttp3:okhttp:3.14.7'
+
+    //kt
+    api 'androidx.core:core-ktx:1.3.0'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    //Glide
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
+
+    //anko
+    def anko_version = '0.10.8'
+    implementation "org.jetbrains.anko:anko-sdk27:$anko_version"
+    implementation "org.jetbrains.anko:anko-sdk27-listeners:$anko_version"
+
+    //JSoup
+    implementation 'org.jsoup:jsoup:1.11.3'
+    implementation 'cn.wanghaomiao:JsoupXpath:2.4.3'
+    implementation 'com.jayway.jsonpath:json-path:2.5.0'
+
+    //简繁转换
+    implementation 'com.luhuiguo:chinese-utils:1.0'
+
+    // 标签 https://github.com/hongyangAndroid/FlowLayout
+    implementation 'com.hyman:flowlayout-lib:1.1.2'
+
+    //tagGroup
+    implementation 'me.gujun.android.taggroup:library:1.4@aar'
+
+
+    //字符串比较
+    implementation 'net.ricecode:string-similarity:1.0.0'
+
+    //二维码
+    implementation 'cn.bingoogolapple:bga-qrcode-zxing:1.3.7'
+
+
+    //颜色选择
+    implementation 'com.jaredrummler:colorpicker:1.1.0'
+
+    //小红点(外部)
+    implementation "me.leolin:ShortcutBadger:1.1.22@aar"
+
+    //小红点(内部)
+    implementation 'com.itingchunyu.badgeview:badgeview:1.0.5'
+}

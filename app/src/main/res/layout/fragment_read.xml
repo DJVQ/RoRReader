@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.scwang.smartrefresh.layout.SmartRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/srl_read_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    tools:context=".ui.fragment.bookcase.ReadFragment">
+
+    <com.scwang.smartrefresh.header.MaterialHeader
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:id="@+id/ll_read_no_data_tips"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:srcCompat="@drawable/ic_vector_add_bookcase"
+                app:tint="@color/textSecondary" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="当前无任何书籍，请添加"
+                android:textColor="@color/textSecondary"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <com.example.myreadproject8.widget.custom.DragSortGridView
+            android:id="@+id/read_gv_book"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/rl_book_edit"
+            android:layout_alignParentTop="true"
+            android:columnWidth="100dp"
+            android:gravity="center"
+            android:horizontalSpacing="10dp"
+            android:listSelector="@android:color/transparent"
+            android:numColumns="auto_fit"
+            android:scrollbars="none"
+            android:verticalSpacing="10dp" />
+
+
+        <RelativeLayout
+            android:id="@+id/rl_read_book_edit"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/colorForeground"
+            android:gravity="center_vertical"
+            android:paddingEnd="10dp"
+            android:visibility="gone">
+
+            <CheckBox
+                android:id="@+id/read_book_selected_all"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="15dp"
+                android:text="全选"
+                android:textColor="@color/textSecondary"
+                android:textSize="15dp"
+                android:theme="@style/MyCheckBox" />
+
+
+            <Button
+                android:id="@+id/read_book_btn_delete"
+                android:layout_width="90dp"
+                android:layout_height="35dp"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="15dp"
+                android:layout_toRightOf="@id/read_book_selected_all"
+                android:background="@drawable/selector_btn_add"
+                android:clickable="false"
+                android:enabled="false"
+                android:text="删除/移除"
+                android:textColor="@color/selector_btn_file_add" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+</com.scwang.smartrefresh.layout.SmartRefreshLayout>

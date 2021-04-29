@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar" />
+
+    <LinearLayout
+        android:id="@+id/ll_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <ScrollView
+            android:id="@+id/sv_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="25dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerInParent="true"
+                        android:text="@string/read_setting"
+                        android:textColor="@color/textPrimary" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_volume"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/selector_common_bg"
+                    android:gravity="center"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="@string/volume_turn_page"
+                        android:textColor="@color/textSecondary"
+                        android:textSize="@dimen/text_normal_size" />
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/sc_volume"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:clickable="false"
+                        android:longClickable="false" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_reset_screen"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/selector_common_bg"
+                    android:gravity="center"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="@string/reset_screen_time"
+                        android:textColor="@color/textSecondary"
+                        android:textSize="@dimen/text_normal_size" />
+
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:id="@+id/sc_reset_screen"
+                        android:layout_width="115dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:clickable="false"
+                        android:dropDownWidth="75dp"
+                        android:gravity="center"
+                        android:longClickable="false" />
+                </RelativeLayout>
+
+
+
+                <RelativeLayout
+                    android:id="@+id/rl_content_replace"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/selector_common_bg"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="@string/content_replace"
+                        android:textColor="@color/textSecondary"
+                        android:textSize="@dimen/text_normal_size" />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/rl_no_menu_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/selector_common_bg"
+                    android:gravity="center"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="@string/no_menu_ch_title"
+                        android:textColor="@color/textSecondary"
+                        android:textSize="@dimen/text_normal_size" />
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/sc_no_menu_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:clickable="false"
+                        android:longClickable="false" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="25dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerInParent="true"
+                        android:text="@string/bookcase_setting"
+                        android:textColor="@color/textPrimary" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_book_sort"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="@drawable/selector_common_bg"
+                    android:orientation="vertical"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="8dp"
+                    android:paddingRight="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/book_sort"
+                        android:textColor="@color/textSecondary"
+                        android:textSize="@dimen/text_normal_size" />
+
+                    <TextView
+                        android:id="@+id/tv_book_sort"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="5dp"
+                        android:text="@string/manual_sort"
+                        android:textColor="@color/textAssist" />
+                </LinearLayout>
+
+
+
+
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="25dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerInParent="true"
+                        android:text="@string/search_setting"
+                        android:textColor="@color/textPrimary" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_thread_num"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="@drawable/selector_common_bg"
+                    android:orientation="vertical"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="8dp"
+                    android:paddingRight="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/thread_num"
+                        android:textColor="@color/textSecondary"
+                        android:textSize="@dimen/text_normal_size" />
+
+                    <TextView
+                        android:id="@+id/tv_thread_num"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="5dp"
+                        android:text="@string/cur_thread_num"
+                        android:textColor="@color/textAssist" />
+                </LinearLayout>
+
+
+
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="25dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerInParent="true"
+                        android:text="@string/cathe_setting"
+                        android:textColor="@color/textPrimary" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_cathe_gap"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/selector_common_bg"
+                    android:gravity="center"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="@string/cathe_gap"
+                        android:textColor="@color/textSecondary"
+                        android:textSize="@dimen/text_normal_size" />
+
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:id="@+id/sc_cathe_gap"
+                        android:layout_width="115dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:clickable="false"
+                        android:dropDownWidth="75dp"
+                        android:gravity="center"
+                        android:longClickable="false"
+                        android:textColor="@color/textSecondary" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_download_all"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="@drawable/selector_common_bg"
+                    android:orientation="vertical"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="8dp"
+                    android:paddingRight="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/download_all"
+                        android:textColor="@color/textSecondary"
+                        android:textSize="@dimen/text_normal_size" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="5dp"
+                        android:text="@string/download_all_tip"
+                        android:textColor="@color/textAssist" />
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_delete_cathe"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/selector_common_bg"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="@string/clear_cathe"
+                        android:textColor="@color/textSecondary"
+                        android:textSize="@dimen/text_normal_size" />
+
+                </RelativeLayout>
+
+
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</LinearLayout>

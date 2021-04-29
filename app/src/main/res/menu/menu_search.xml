@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_disable_source"
+        android:title="@string/disable_source"
+        android:visible="false"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_source_man"
+        android:title="@string/book_source_man"
+        app:showAsAction="never"/>
+
+    <group android:id="@+id/source_group">
+
+    </group>
+
+
+</menu>

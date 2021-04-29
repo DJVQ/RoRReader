@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+
+    <include layout="@layout/toolbar"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="45dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        >
+        <Button
+            android:id="@+id/btnMainIn"
+            android:layout_width="160dp"
+            android:layout_height="70dp"
+            android:text="直接进入"
+            />
+
+        <Button
+            android:id="@+id/btnMainLogin"
+            android:layout_width="160dp"
+            android:layout_height="70dp"
+            android:text="登录/注册"
+            />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

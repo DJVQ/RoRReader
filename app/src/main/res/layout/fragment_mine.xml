@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/colorBackground"
+    android:scrollbars="vertical"
+    tools:context=".ui.fragment.MineFragment">
+
+    <LinearLayout
+        android:id="@+id/ll_mine"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerInParent="true"
+                android:text="书架"
+                android:textColor="@color/textPrimary" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/mine_rl_book_source"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@drawable/selector_common_bg"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp">
+
+            <ImageView
+                android:id="@+id/iv_book_source"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_source"
+                app:tint="@color/textPrimary" />
+
+            <TextView
+                android:id="@+id/tv_book_source"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="20dp"
+                android:layout_toEndOf="@id/iv_book_source"
+                android:text="@string/book_source_man"
+                android:textColor="@color/textSecondary"
+                android:textSize="@dimen/text_normal_size" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/mine_rl_backup"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@drawable/selector_common_bg"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp">
+
+            <ImageView
+                android:id="@+id/iv_backup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_backup"
+                app:tint="@color/textPrimary" />
+
+            <TextView
+                android:id="@+id/tv_backup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="15dp"
+                android:layout_toEndOf="@id/iv_backup"
+                android:text="@string/menu_bookcase_backup"
+                android:textColor="@color/textSecondary"
+                android:textSize="@dimen/text_normal_size" />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerInParent="true"
+                android:text="设置"
+                android:textColor="@color/textPrimary" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/mine_rl_setting"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@drawable/selector_common_bg"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp">
+
+            <ImageView
+                android:id="@+id/iv_setting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_settings"
+                app:tint="@color/textPrimary" />
+
+            <TextView
+                android:id="@+id/tv_setting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="15dp"
+                android:layout_toEndOf="@id/iv_setting"
+                android:text="@string/menu_settings"
+                android:textColor="@color/textSecondary"
+                android:textSize="@dimen/text_normal_size" />
+
+        </RelativeLayout>
+
+
+
+
+
+
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

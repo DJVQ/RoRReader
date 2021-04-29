@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.activity.ReciteTableActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            style="@style/NoPaddingToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="?attr/colorPrimary"
+            android:minHeight="?attr/actionBarSize"
+            android:gravity="center_vertical"
+            android:theme="?attr/actionBarStyle"
+            android:transitionName="sharedView"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:titleTextAppearance="@style/toolbar_title_textStyle"
+            app:subtitleTextAppearance="@style/toolbar_subtitle_textStyle"
+            app:popupTheme="@style/AppTheme.PopupOverlay">
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/bookcase_tab"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="9"
+                android:visibility="gone"
+                app:tabIndicatorColor="@color/colorAccent"
+                app:tabIndicatorHeight="2dp"
+                app:tabIndicatorFullWidth="true"
+                app:tabSelectedTextColor="@color/textPrimaryInverted"
+                app:tabTextColor="@color/translucent_text"
+                app:tabTextAppearance="@style/TabLayoutTextStyle"/>
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.6"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="艾宾浩斯遗忘曲线:"
+            ></TextView>
+
+
+        <com.example.myreadproject8.widget.EbbinghausWave
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/table_standard_recite"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_recite"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.6"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="当前记忆曲线:"
+            ></TextView>
+        <com.example.myreadproject8.widget.EbbinghausWave
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/table_recite"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_ideal_recite"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.6"
+        android:visibility="gone"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="理想记忆曲线:"
+            ></TextView>
+        <com.example.myreadproject8.widget.EbbinghausWave
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/table_ideal_recite"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.2"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:layout_weight="0.5">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="当前背诵情况:" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center_vertical"
+                android:gravity="center">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="按时背诵次数:"
+                    android:layout_gravity="center_horizontal"/>
+                <TextView
+                    android:id="@+id/recite_at_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:layout_marginRight="20dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="剩余背诵次数:"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="20dp"/>
+                <TextView
+                    android:id="@+id/recite_not_at_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center_vertical"
+                android:gravity="center">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="未按时背诵次数:"/>
+
+            <TextView
+                android:id="@+id/un_recite_times"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.3"
+            android:gravity="center"
+            android:orientation="horizontal"
+            >
+
+            <Button
+                android:id="@+id/recite_ideal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="理想记忆曲线" />
+
+            <Button
+                android:id="@+id/recite_mine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="我的记忆曲线"
+                />
+
+            <Button
+                android:id="@+id/recite_reset_nums"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="重置背诵次数"
+                />
+        </LinearLayout>
+    </LinearLayout>
