@@ -16,6 +16,8 @@ import com.example.myreadproject8.util.string.StringHelper;
 import java.util.List;
 
 import io.reactivex.Observable;
+import io.reactivex.internal.functions.Functions;
+import io.reactivex.plugins.RxJavaPlugins;
 import okhttp3.MediaType;
 import okhttp3.RequestBody;
 
@@ -153,28 +155,16 @@ public class CommonApi extends BaseApi{
         String charset = "utf-8";
         charset = rc.getCharset();
         String finalCharset = charset;
-        /**
-         * description:通过Observable.create()方法传入一个Observable.OnSubscribe对象来创建Observable
-         * 封装网络请求
-         */
+        RxJavaPlugins.setErrorHandler(Functions.emptyConsumer());
         return Observable.create(emitter -> {
             try {
-                //不是post请求则不需要requestBody
-                System.out.println("test1commonapi"+Thread.currentThread());
                 if (rc.isPost()) {
-                    //获取搜索链接
                     String url = rc.getSearchLink();
-                    //分割url信息
                     String[] urlInfo = url.split(",");
-                    //url前半段
                     url = urlInfo[0];
-                    //包含搜索关键字的后半段
                     String body = makeSearchUrl(urlInfo[1], key);
-                    //设置post请求头以 application/x-www-form-urlencoded 方式提交数据
                     MediaType mediaType = MediaType.parse("application/x-www-form-urlencoded");
-                    //创建RequestBody对象，将参数按照指定的MediaType封装
                     RequestBody requestBody = RequestBody.create(mediaType, body);
-                    //onNext得到搜索内容（搜索对象与实体book的映射）
                     emitter.onNext(rc.getBooksFromSearchHtml(OkHttpUtils.getHtml(url, requestBody, finalCharset)));
                 } else {
                     emitter.onNext(rc.getBooksFromSearchHtml(OkHttpUtils.getHtml(makeSearchUrl(rc.getSearchLink(), key), finalCharset)));
@@ -244,46 +234,5 @@ public class CommonApi extends BaseApi{
         });
     }
 
-    /**
-     * 通过api获取蓝奏云可下载直链
-     *
-     * @param lanZouUrl
-     * @param callback
-     */
-    public static void getUrl(final String lanZouUrl, final ResultCallback callback) {
-        LanZousApi.getUrl1(lanZouUrl, new ResultCallback() {
-            @Override
-            public void onFinish(final Object o, int code) {
-                LanZousApi.getKey((String) o, new ResultCallback() {
-                    final String referer = (String) o;
 
-                    @Override
-                    public void onFinish(Object o, int code) {
-                        LanZousApi.getUrl2((String) o, new ResultCallback() {
-                            @Override
-                            public void onFinish(Object o, int code) {
-                                LanZousApi.getRedirectUrl((String) o, callback);
-                            }
-
-                            @Override
-                            public void onError(Exception e) {
-                                callback.onError(e);
-                            }
-                        }, referer);
-                    }
-
-                    @Override
-                    public void onError(Exception e) {
-                        callback.onError(e);
-                    }
-                });
-            }
-
-            @Override
-            public void onError(Exception e) {
-                callback.onError(e);
-            }
-        });
-
-    }
 }
